@@ -5,14 +5,23 @@
   box-sizing: border-box;
   font-family: 'Poppins',sans-serif;
 }
-body{
+/* body{
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
   background: linear-gradient(rgb(107, 35, 223), white);
+}*/
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: url('../images/login1.jpg') no-repeat center center fixed;
 }
+
 .container{
   max-width: 700px;
   width: 100%;

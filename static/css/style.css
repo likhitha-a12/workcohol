@@ -155,7 +155,7 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
-  overflow-x: hidden; /* Optional: avoid horizontal scroll */
+  overflow-x: hidden; 
   font-family: 'Roboto', sans-serif;
 }
 
@@ -164,18 +164,18 @@ html, body {
   padding: 60px 20px;
   width: 100%;
   min-height: 100vh;
-  background-color: rgba(245, 61, 61, 0.452);
+  background: url('../images/cont2_new.jpg') no-repeat center center fixed;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+} 
 
 
 .contact-form {
-  background: rgba(255, 255, 255, 0.9);  /* white box */
+  background: rgba(255, 255, 255, 0.9);  
   padding: 30px 40px;
   border-radius: 12px;
   width: 100%;
