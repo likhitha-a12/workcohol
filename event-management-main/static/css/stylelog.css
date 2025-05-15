@@ -11,7 +11,11 @@ body{
   justify-content: center;
   align-items: center;
   padding: 10px;
+<<<<<<< HEAD
   background: url('../images/gayat.jpg') no-repeat center center fixed;
+=======
+  background: linear-gradient(rgb(253, 113, 200), white);
+>>>>>>> a23f1805dc0c8bba1d5835012350605735aeb4bb
 }
 .container{
   max-width: 700px;

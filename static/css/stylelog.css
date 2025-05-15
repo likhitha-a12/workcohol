@@ -15,12 +15,19 @@
 }*/
 body {
   height: 100vh;
+<<<<<<< HEAD
   width:100%;
+=======
+>>>>>>> a23f1805dc0c8bba1d5835012350605735aeb4bb
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
+<<<<<<< HEAD
   background: url('../images/bg.jpg') no-repeat center center fixed;
+=======
+  background: url('../images/login1.jpg') no-repeat center center fixed;
+>>>>>>> a23f1805dc0c8bba1d5835012350605735aeb4bb
 }
 
 .container{
