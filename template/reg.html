@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <div class="background">
+  <div class="main-container"> <!-- NEW FLEX CONTAINER -->
+
+    <div class="logo-container">
+      <img src="{% static 'images/logo1.jpg' %}" alt="Company Logo" class="neon-image">
+    </div>
+
+    <div class="register-container">
+      <h1 class="company-name">Eventify</h1>
+      <p class="slogan">Creating Moments, Crafting Memories</p>
+      <h2 class="title">Registration</h2>
+
+      <form method="post">
+        {% csrf_token %}
+        <div class="input-box">
+          <label>User Name:</label>
+          <input type="text" name="username" required>
+        </div>
+
+        <div class="input-box">
+          <label>E-Mail ID:</label>
+          <input type="email" name="email" required>
+        </div>
+
+        <div class="input-box">
+          <label>Password:</label>
+          <input type="password" name="password" required>
+        </div>
+
+        <div class="input-box">
+          <label>Confirm Password:</label>
+          <input type="password" name="confirmpassword" required>
+        </div>
+
+        <div class="button">
+          <input type="submit" value="Sign Up">
+        </div>
+
+        {% for message in messages %}
+          <script>alert('{{ message }}');</script>
+        {% endfor %}
+      </form>
+    </div>
+
+  </div> <!-- END OF main-container -->
+</div> <!-- END OF background -->
+
+</body>
+</html>
