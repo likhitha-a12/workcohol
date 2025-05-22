@@ -1,0 +1,257 @@
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin: 0;
+padding: 0;
+background: #f7f7f7;
+color: #333;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+header {
+background-color: #222;
+color: #fff;
+padding: 20px;
+text-align: center;
+}
+.event-section h2{
+  font-family:'Ancizar Serif';
+  font-size: 40px;
+}
+h1, h2 {
+text-align: center;
+margin-top: 20px;
+
+}
+
+
+.filter-buttons {
+text-align: center;
+margin: 20px 0;
+}
+
+.filter-buttons button {
+margin: 5px;
+padding: 10px 15px;
+border: none;
+background-color: #555;
+color: #fff;
+cursor: pointer;
+border-radius: 5px;
+transition: background 0.3s;
+}
+
+.filter-buttons button:hover,
+.filter-buttons button.active {
+background-color: #e91e63;
+}
+
+
+.event-section {
+margin: 40px 10%;
+background: #fff;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+}
+
+.image-row {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+margin-top: 20px;
+}
+
+.image-row img {
+width: 32%;
+height: auto;
+border-radius: 10px;
+transition: transform 0.3s ease-in-out;
+}
+
+.image-row img:hover {
+transform: scale(1.05);
+}
+
+.image-row p {
+flex-basis: 100%;
+margin-top: 20px;
+font-size: 16px;
+text-align: center;
+color: #555;
+}
+
+
+.event-card {
+margin-top: 20px;
+text-align: center;
+background: #f0f0f0;
+padding: 15px;
+border-radius: 10px;
+}
+
+.event-card img {
+width: 50%;
+height: auto;
+border-radius: 8px;
+transition: transform 0.3s ease;
+}
+
+.event-card img:hover {
+transform: scale(1.05);
+}
+
+section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+#pricing { 
+  margin: 50px 10%;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+.mainhead h2 {
+  font-size: 40px;
+  font-weight: 900;
+  font-family: 'Georgia', serif;
+  color: #030007;
+  text-align: center;
+  text-shadow:
+    1px 1px 0 #ccc,
+    2px 2px 0 #bbb,
+    3px 3px 0 #aaa,
+    4px 4px 0 #999,
+    5px 5px 0 #888;
+  margin-bottom: 10px;
+}
+
+
+#pricing p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  font-family: 'Lobster';font-size: 22px;
+  font-size: 20px;
+  
+}
+
+.pricing-plans {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.plan {
+  background-color: #fff;
+  width: 30%;
+  padding: 0; 
+  margin: 15px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.plan:hover {
+  transform: translateY(-5px);
+}
+
+.plan-header {
+  padding: 15px;
+  color: white;
+  text-align: center;
+}
+
+
+.plan.basic .plan-header {
+  background-color: #90E0EF;
+  color: #003366;
+}
+
+.plan.premium .plan-header {
+  background-color: #219ABC;
+  color: white;
+}
+
+.plan.luxury .plan-header {
+  background-color: #03045E;
+  color: white;
+}
+
+.plan-header h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.plan-header .price {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.plan ul {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+}
+
+.plan ul li {
+  position: relative;
+  padding-left: 1.6em;
+  margin-bottom: 0.5em;
+  color: #598392;
+}
+
+.plan ul li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #EF476F;
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 1;
+}
+
+
+@media (max-width: 900px) {
+  .image-row img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .pricing-plans {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan {
+    width: 80%;
+  }
+}
+.booking-button-container {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.booking-button-container button {
+  padding: 20px 180px;
+  font-size: 23px;
+  background-color: #38A35D;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.booking-button-container button:hover {
+  background-color: #e91e63;
+}
+

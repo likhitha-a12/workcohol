@@ -1,35 +1,176 @@
-{% extends 'base.html' %}
 {% load static %}
-{%block title%}
-Events
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Gallery</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styleev.css' %}">
+</head>
+<body>
 
-        {%block content%}
-<h2 class="text-center">Events</h2>
-<div class="container">
-         {% for i  in eve %}
-        <div class="card text-center" style="width: 20rem; display:inline-block;margin: 20px;">
-                <img src="{{i.img.url}}" class="card-img-top" alt="..." height="150px" width="200px">
-                <div class="card-body">
-                  <h5 class="card-title">{{i.name}}</h5>
-                  <p class="card-text">{{i.desc}}</p>
-                </div>
-              </div>
-              {% endfor %}
-               <div class="card text-center" style="width: 18rem; display:inline-block;margin: 20px;">
-                <img src="{% static 'images/page1_img2.jpg' %}" class="card-img-top" alt="..." height="150px" width="200px">
-                <div class="card-body">
-                  <h5 class="card-title">Event2</h5>
-                  <p class="card-text">Best option for your Events....!!Join with Us..</p>
-                </div>
-              </div>
-              <div class="card text-center" style="width: 18rem; display:inline-block;margin: 20px;">
-                <img src="{% static 'images/page1_img3.jpg' %}" class="card-img-top" alt="..." height="150px" width="200px">
-                <div class="card-body">
-                  <h5 class="card-title">Event3</h5>
-                  <p class="card-text">Best option for your Events....!!Join with Us..</p>
-                </div>
-              </div> 
+<header>
+    <h1>Event Categories</h1>
+</header>
+
+<a href="{% url 'index' %}">
+  <button style="position: absolute; top: 70px; right: 10px; padding: 17px 46px; background-color: #f7a902; color: white; border: none; border-radius: 5px; cursor: pointer; font-size:16px;">
+    Home
+  </button>
+</a>
+
+<section class="filter-buttons">
+    <button onclick="filterEvents('all', event)" class="active">All Events</button>
+    <button onclick="filterEvents('wedding', event)">Weddings</button>
+    <button onclick="filterEvents('birthday', event)">Birthdays</button>
+    <button onclick="filterEvents('corporate', event)">Corporate</button>
+    <button onclick="filterEvents('concert', event)">Concerts</button>
+    <button onclick="filterEvents('other', event)">Other Events</button>
+</section>
+
+  <h1>Our Event Collections</h1>
+
+  <div class="event-section wedding" id="wedding">
+    <h2>Weddings</h2>
+    <div class="image-row">
+      <img src="{% static 'images/wedding1.jpg' %}" alt="trail 1" />
+      <img src="{% static 'images/wedding2.jpg' %}" alt="Wedding 2" />
+      <img src="{% static 'images/wedding3.jpg' %}" alt="Wedding 3" />
+      </div>
+      <div class="event-card">
+      <h3>Weddings</h3>
+
+      <p>Create the wedding of your dreams with our comprehensive planning, tailored to your unique style and vision. 
+        From intimate gatherings to grand celebrations, our expert team will guide you every step of the way, ensuring a stress-free and unforgettable experience.
+         Let us bring your fairytale to life with meticulous attention to detail, personalized touches, and flawless execution.</p>
+    </div>
+  </div>
+
+  <div class="event-section birthday" id="birthday">
+     <h2>Birthdays</h2>
+    <div class="image-row">
+      <img src="{% static 'images/birthday1.jpg' %}" alt="birthday 1" />
+      <img src="{% static 'images/birthday2.jpg' %}" alt="birthday  2" />
+      <img src="{% static 'images/birthday3.jpg' %}" alt="birthday 3" />
+      </div>
+      <div class="event-card">
+      <h3>Birthday Bash</h3>
+      <p>Celebrate birthdays in style with our expertly curated themes, activities, and entertainment. 
+        Whether it's a milestone birthday or a fun-filled gathering, we'll work with you to create an unforgettable experience that reflects the birthday person's personality and style.
+         Our team will handle every detail, from decorations to cake design, to ensure a joyous and memorable celebration.
+      </p>
+    </div>
+  </div>
+
+  
+  <div class="event-section corporate" id="corporate">
+    <h2>Corporate Events</h2>
+    <div class="image-row">
+      <img src="{% static 'images/corporate1.jpg' %}" alt="corporate 1" />
+      <img src="{% static 'images/corporate2.jpg' %}" alt="corporate 2" />
+      <img src="{% static 'images/corporate3.jpg' %}" alt="corporate 3" />
+      </div>
+      <div class="event-card">
+      <h3>Corporate Events</h3>
+      <p>
+Professional planning for meetings, lunches, and team-building events that drive results and foster meaningful connections. 
+Our experienced team will work closely with you to understand your objectives and preferences, crafting bespoke events that exceed your expectations. 
+From venue selection to catering and entertainment, we'll ensure a seamless and productive experience that aligns with your company's vision and goals.
+</p>
+    </div>
+  </div>
+   
+  <div class="event-section concert" id="concert">
+    <h2>Concerts</h2>
+    <div class="image-row">
+      <img src="{% static 'images/concert1.jpg' %}" alt="concert 1" />
+      <img src="{% static 'images/concert2.jpg' %}" alt="concert 2" />
+      <img src="{% static 'images/concert3.jpg' %}" alt="concert 3" />
+    </div>
+    <div class="event-card">
+      <h3>Concert Nights</h3>
+      <p>End-to-end concert planning, including stay setup, artist coordination, and logistical management.
+         Our team of experts will work tirelessly to deliver an electrifying experience that leaves your audience in awe. 
+        From venue selection to technical setup and artist management, we'll handle every aspect with precision and care, ensuring a memorable and impactful event that resonates with your audience</p>
+    </div>
+  </div>
+
+  
+  <div class="event-section other" id="other">
+    <h2>Other Events</h2>
+    <div class="image-row">
+     <img src="{% static 'images/other1.jpg' %}" alt="other 1" />
+     <img src="{% static 'images/other2.jpg' %}" alt="other 2" />
+     <img src="{% static 'images/other3.jpg' %}" alt="other 3" />
+    </div>
+    <div class="event-card">
+      <h3>Other Events</h3>
+      <p>From baby showers to reunions, we cover every special occasion with creativity, passion, and attention to detail. 
+        Our team will work with you to craft unique and memorable experiences that reflect your personality, style, and preferences.
+         Whether it's a family gathering, a milestone celebration, or a social gathering, we'll ensure a stress-free and enjoyable experience that creates lifelong memories.</p>
+    </div>
+  </div>
+
+
+<section id="pricing">
+    <div class="mainhead">
+    <h2>Our Pricing Plans</h2>
+    <p>Choose the perfect package for your event needs. All plans can be customized to fit your specific requirements.</p>
+   </div>
+    <div class="pricing-plans">
+        <div class="plan basic">
+          <div class="plan-header">
+            <h3>Basic Package</h3>
+            <p class="price">$1,499</p>
+            </div>
+          
+            <ul>
+                <li>Event consultation & planning</li>
+                <li>Venue selection assistance</li>
+                <li>Basic decor setup</li>
+                <li>Vendor recommendations</li>
+            </ul>
+        
+        </div>
+
+        <div class="plan premium">
+          <div class="plan-header">
+            <h3>Premium Package</h3>
+            <p class="price">$3,499</p>
+            </div>
+            <ul>
+                <li>All Basic features</li>
+                <li>Full-day coordination</li>
+                <li>Custom event theme</li>
+            </ul>
+            
+        </div>
+
+        <div class="plan luxury">
+          <div class="plan-header">
+            <h3>Luxury Package</h3>
+            <p class="price">$7,999</p>
+            </div>
+            <ul>
+                <li>All Premium features</li>
+                <li>Luxury decor & design</li>
+                <li>VIP guest management</li>
+            </ul>
+            
+        </div>
+    </div>
+</section>
+<div class="booking-button-container">
+  <button onclick="goToBookingPage()">Book Now</button>
 </div>
 
-{% endblock %}
+<script src="{% static 'script.js/main.js' %}"></script>
+<script>
+  document.getElementById("home-button").addEventListener("click", function() {
+    window.location.href = '/index/';
+  });
+</script>
+
+
+</body>
+</html>

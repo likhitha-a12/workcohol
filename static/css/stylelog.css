@@ -5,14 +5,7 @@
   box-sizing: border-box;
   font-family: 'Poppins',sans-serif;
 }
-/* body{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  background: linear-gradient(rgb(107, 35, 223), white);
-}*/
+
 body {
   height: 100vh;
 
@@ -22,11 +15,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px;
-
-  background: url('../images/bg.jpg') no-repeat center center fixed;
-
-  
-
+  background: url('../images/login1.jpg') no-repeat center center fixed;
 }
 
 .container{
@@ -38,8 +27,8 @@ body {
   box-shadow: 0 5px 10px rgba(253, 134, 213, 0.15);
 }
 .container .title{
-  color: rgb(107, 35, 223);;
-  font-size: 25px;
+  color: rgb(245, 6, 98);
+  font-size: 44px;
   font-weight: 500;
   position: relative;
 }
@@ -49,9 +38,9 @@ body {
   left: 0;
   bottom: 0;
   height: 3px;
-  width: 30px;
+  width: 80px;
   border-radius: 5px;
-  background: linear-gradient(135deg,rgb(107, 35, 223), white);
+  background: linear-gradient(135deg,rgb(70, 2, 255), white);
 }
 .content form .user-details{
   display: flex;
@@ -72,7 +61,7 @@ form .input-box span.details{
   height: 45px;
   width: 100%;
   outline: none;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 5px;
   padding-left: 15px;
   border: 1px solid #ccc;
@@ -81,7 +70,7 @@ form .input-box span.details{
 }
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
-  border-color: rgb(107, 35, 223);
+  border-color: rgb(197, 6, 255);
 }
  form .category{
    display: flex;
@@ -118,11 +107,10 @@ form .input-box span.details{
    letter-spacing: 1px;
    cursor: pointer;
    transition: all 0.3s ease;
-   background: linear-gradient(135deg, rgb(107, 35, 223),white);
+   background: linear-gradient(135deg, #390099,white);
  }
  form .button input:hover{
-  /* transform: scale(0.99); */
-  background: linear-gradient(-135deg,rgb(107, 35, 223),white);
+  background: linear-gradient(-135deg,#9e0059,white);
      color:black;}
  @media(max-width: 584px){
  .container{

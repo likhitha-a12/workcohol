@@ -105,7 +105,7 @@ form .input-box span.details{
    background: linear-gradient(135deg, rgb(246, 89, 207),white);
  }
  form .button input:hover{
-  /* transform: scale(0.99); */
+  
   background: linear-gradient(-135deg, rgb(246, 89, 207),white);
      color: rgb(246, 89, 207);}
  @media(max-width: 584px){
@@ -130,3 +130,4 @@ form .user-details .input-box{
     flex-direction: column;
   }
 }
+

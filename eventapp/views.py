@@ -25,3 +25,15 @@ def booking(request):
     return render(request,'booking.html',dict_form)
 def contact(request):
     return render(request,'contact.html')
+
+
+from django.core.mail import send_mail
+from django.conf import settings
+
+def send_booking_confirmation_email(user_email, event_name):
+    subject = 'Booking Confirmation - Event Management Platform'
+    message = f'Thank you for booking the event: {event_name}.\nWe look forward to seeing you!'
+    from_email = settings.EMAIL_HOST_USER
+    recipient_list = [user_email]
+    
+    send_mail(subject, message, from_email, recipient_list)
