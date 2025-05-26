@@ -37,3 +37,19 @@ def send_booking_confirmation_email(user_email, event_name):
     recipient_list = [user_email]
     
     send_mail(subject, message, from_email, recipient_list)
+
+# eventapp/views.py
+
+from rest_framework import viewsets
+from .models import Event
+from .serializers import EventSerializer
+
+class EventViewSet(viewsets.ModelViewSet):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+
+
+
+
+
+

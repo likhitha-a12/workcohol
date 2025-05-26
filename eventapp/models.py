@@ -1,16 +1,31 @@
 from django.db import models
 
+from django.contrib.auth.models import User
+
 # Create your models here.
 class Event(models.Model):
-    img=models.ImageField(upload_to="pic")
     name=models.CharField(max_length=50)
-    desc=models.CharField(max_length=50)
+    desc = models.TextField() 
     def __str__(self):
         return self.name
+    
+
+class EventImage(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name="images")
+    image = models.ImageField(upload_to="pic")
+
+    def __str__(self):
+        return f"{self.event.name} Image"
+
+from django.db import models
 
 class Booking(models.Model):
-    cus_name=models.CharField(max_length=55)
-    cus_ph=models.CharField(max_length=12)
-    name=models.ForeignKey(Event,on_delete=models.CASCADE)
-    booking_date=models.DateField()
-    booked_on=models.DateField(auto_now=True)
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    date = models.DateField()
+    message = models.TextField()
+
+    def __str__(self):
+        return f"{self.name} - {self.date}"
+
+    
