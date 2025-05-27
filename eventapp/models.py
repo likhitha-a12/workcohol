@@ -21,11 +21,19 @@ from django.db import models
 
 class Booking(models.Model):
     name = models.CharField(max_length=100)
-    email = models.EmailField()
-    date = models.DateField()
-    message = models.TextField()
+    email = models.EmailField(default='admin@example.com')
+    booking_date = models.DateField()
+    message = models.TextField(default='No message provided') 
 
     def __str__(self):
-        return f"{self.name} - {self.date}"
+        return f"{self.name} - {self.booking_date}"  
 
-    
+
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} ({self.email})"

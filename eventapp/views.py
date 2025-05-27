@@ -38,7 +38,7 @@ def send_booking_confirmation_email(user_email, event_name):
     
     send_mail(subject, message, from_email, recipient_list)
 
-# eventapp/views.py
+
 
 from rest_framework import viewsets
 from .models import Event
@@ -51,5 +51,27 @@ class EventViewSet(viewsets.ModelViewSet):
 
 
 
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+from .models import ContactMessage
+from .serializers import ContactMessageSerializer
+from django.core.mail import send_mail
+from django.conf import settings
 
+@api_view(['POST'])
+def contact_api(request):
+    if request.method == 'POST':
+        serializer = ContactMessageSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
 
+            
+            subject = f"New Contact Message from {serializer.validated_data['name']}"
+            message = f"Name: {serializer.validated_data['name']}\nEmail: {serializer.validated_data['email']}\n\nMessage:\n{serializer.validated_data['message']}"
+            from_email = settings.EMAIL_HOST_USER
+            recipient_list = [from_email]  
+            #send_mail(subject, message, from_email, recipient_list)#
+
+            return Response({'message': 'Message sent successfully!'}, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
