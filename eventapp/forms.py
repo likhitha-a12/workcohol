@@ -4,7 +4,6 @@ class DateInput(forms.DateInput):
     input_type='date'
 class TimeInput(forms.TimeInput):
     input_type='time'
-
 class BookingForm(forms.ModelForm):
     class Meta:
         model=Booking
@@ -34,7 +33,6 @@ class BookingForm(forms.ModelForm):
             'payment_method': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Select payment method'}),
             'ticket_price': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Enter ticket price'}),
             'payment_status': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Select payment status'}),
-
         }
 
         labels={

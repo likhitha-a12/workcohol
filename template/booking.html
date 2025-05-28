@@ -1,11 +1,17 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 {% load widget_tweaks %}
+=======
+
+{% extends 'base.html' %}
+>>>>>>> 242627f525c96f0cf33a0494332c6fb0b9a1d423
 {% load static %}
 {%block title%}
 booking 
 {% endblock %}
 
         {%block content%}
+<<<<<<< HEAD
         <style>
     body {
         background-image: url("{% static 'images/logo2.jpg' %}");
@@ -270,4 +276,18 @@ function getCookie(name) {
 }
 
 </script>
+=======
+<div class="container p-3 text-center">
+        <h1 style="color:  #6b23df;">Book Your Events</h1><br>
+<form action="" method="POST">
+
+     {% csrf_token %}
+
+{{form.as_p}}
+<button class="btn text-center" style="background-color:#89bcec;">Book Now</button>
+
+</form>
+</div>
+
+>>>>>>> 242627f525c96f0cf33a0494332c6fb0b9a1d423
 {% endblock %}

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
+<<<<<<< HEAD
 {% block title %}
     Contact Us
 {% endblock %}
@@ -8,6 +9,12 @@
 {% block content %}
 <div class="container contact-container">
 
+=======
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="container contact-container">
+>>>>>>> 242627f525c96f0cf33a0494332c6fb0b9a1d423
     <h1 class="text-center contact-title">Contact Us</h1>
     <p class="text-center contact-subtitle">We'd love to hear from you! Please reach out to us using the form below.</p>
 
@@ -15,6 +22,7 @@
         <div class="col-md-6 mx-auto">
             <div class="contact-form-wrapper">
                 <form method="post" action="#" class="contact-form">
+<<<<<<< HEAD
   {% csrf_token %}
   
   <input type="text" id="name" name="name" class="contact-input" placeholder="Your Name">
@@ -24,6 +32,22 @@
   <button type="submit" class="contact-button">Send Message</button>
 </form>
 
+=======
+                    {% csrf_token %}
+                    <input type="text" id="name" name="name" class="contact-input" placeholder="Your Name">
+                    <input type="email" id="email" name="email" class="contact-input" placeholder="Your Email">
+                    <textarea id="message" name="message" class="contact-textarea" placeholder="Your Message"></textarea>
+                    <button type="submit" class="contact-button">Send Message</button>
+                </form>
+                <div id="thank-you-message" style="display:none; background-color: #eef3ef; color: #07f556; padding: 20px; border-radius: 5px; margin-top: 10px; text-align: center; transition: opacity 0.2s ease;font-size:20px;">
+  Thank you for contacting us!
+</div>
+                <div id="error-message" style="display:none; background-color: #f8d7da; color: #e90a0a; padding: 20px; border-radius: 5px; margin-top: 10px; text-align: center; transition: opacity 0.5s ease;font-size:20px;">
+  Please fill in all fields!
+</div>
+
+                
+>>>>>>> 242627f525c96f0cf33a0494332c6fb0b9a1d423
             </div>
         </div>
     </div>
@@ -35,6 +59,7 @@
             <h3>Our Office</h3>
             <p>123 Main Street, Cityville, Country</p>
             <p>Phone: (123) 456-7890</p>
+<<<<<<< HEAD
             <p>Email: contact@yourdomain.com</p>
         </div>
         <div class="col-md-6">
@@ -55,4 +80,20 @@
     </div>
 
 </div>
+=======
+            <p>Email: likhitha.rebba12@gmail.com</p>
+        </div>
+        <div class="col-md-6">
+            <h3>Follow Us</h3>
+            <ul class="list-inline social-links">
+                <li class="list-inline-item"><a href="https://facebook.com" target="_blank">Facebook</a></li>
+                <li class="list-inline-item"><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                <li class="list-inline-item"><a href="https://instagram.com" target="_blank">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'script.js/contact.js' %}"></script>
+>>>>>>> 242627f525c96f0cf33a0494332c6fb0b9a1d423
 {% endblock %}

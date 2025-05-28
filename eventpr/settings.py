@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'eventapp',
     'userapp',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
     'rest_framework',
+=======
+>>>>>>> 242627f525c96f0cf33a0494332c6fb0b9a1d423
 ]
 
 MIDDLEWARE = [
@@ -109,6 +112,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
+<<<<<<< HEAD
+=======
+
+>>>>>>> 242627f525c96f0cf33a0494332c6fb0b9a1d423
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
