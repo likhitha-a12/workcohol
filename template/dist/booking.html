@@ -184,8 +184,6 @@ booking
                 {{ form.promo_code.label_tag }}
                 {{ form.promo_code|add_class:"form-control" }}
             </div>
-        
-            
             <div class="mb-3  form-group">
             {{ form.payment_method.label_tag }}
             {{ form.payment_method|add_class:"form-control" }}
@@ -270,16 +268,6 @@ function getCookie(name) {
 }
 
 </script>
-<div class="container p-3 text-center">
-        <h1 style="color:  #6b23df;">Book Your Events</h1><br>
-<form action="" method="POST">
-
-     {% csrf_token %}
-
-{{form.as_p}}
-<button class="btn text-center" style="background-color:#89bcec;">Book Now</button>
-
-</form>
 </div>
 
 {% endblock %}
