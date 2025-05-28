@@ -20,7 +20,6 @@ def booking(request):
         form=BookingForm(request.POST)
         if form.is_valid():
             form.save()
-<<<<<<< HEAD
             user_email = form.cleaned_data.get('cus_email')
             event_name = form.cleaned_data.get('name').name
             # Send booking confirmation email
@@ -42,7 +41,6 @@ def booking(request):
             return redirect('booking_success')
         return redirect('/')
 
->>>>>>> 242627f525c96f0cf33a0494332c6fb0b9a1d423
     form=BookingForm()
     dict_form={
         'form':form
@@ -51,8 +49,6 @@ def booking(request):
 def contact(request):
     return render(request,'contact.html')
 
-<<<<<<< HEAD
-=======
 
 from django.core.mail import send_mail
 from django.conf import settings
@@ -102,3 +98,4 @@ def contact_api(request):
 
             return Response({'message': 'Message sent successfully!'}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
