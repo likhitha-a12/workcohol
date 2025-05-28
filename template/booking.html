@@ -1,0 +1,273 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{%block title%}
+booking 
+{% endblock %}
+
+        {%block content%}
+        <style>
+    body {
+        background-image: url("{% static 'images/logo2.jpg' %}");
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    label {
+        display: block;
+        margin-bottom: 1.5rem;
+        color: #333;
+        text-align: left;
+        font-weight: bold;
+        align-items: center;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+    }
+
+    .form-control {
+        width: 100%;
+        
+    }
+
+    @media (max-width: 768px) {
+        label {
+            text-align: left;
+            font-weight: normal;
+
+        }
+    }
+
+    .booking-title {
+        color: black;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .customer-details-title {
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+    }
+    .event-details-title {
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+    }
+    .ticketing-details-title {
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+    }
+    .ticketing-details-heading {
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+    }
+    .container {
+        max-width: 800px;
+        align-items: center;
+    }
+</style>
+<div class="container">
+<h1 class="booking-title"><b><i> Book Your Event</i></b></h1><br>
+<form action="" method="POST">
+        <br>
+     {% csrf_token %}
+    <h3 class="customer-details-title"><b> Customer Details</h3><br>
+     
+        {% if form.non_field_errors %}
+            <div class="alert alert-danger">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+        {% for field in form %}
+            {% if field.errors %}
+                <div class="alert alert-danger">
+                    {{ field.errors }}
+                </div>
+            {% endif %}
+        {% endfor %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+     <div class="row mb-3 col-md-12 form-group ">
+        
+            <div class="mb-3 col-md-12  form-group"  >
+                {{ form.cus_name.label_tag }}
+                {{ form.cus_name|add_class:"form-control" }}
+            </div>
+            <div class="mb-3 col-md-12  form-group">
+                {{ form.cus_email.label_tag }}
+                {{ form.cus_email|add_class:"form-control" }}
+            </div>
+            <div class="mb-3 col-md-12 form-group">
+                {{ form.cus_ph.label_tag }}
+                {{ form.cus_ph|add_class:"form-control" }}
+            </div>
+            <div class="mb-3 col-md-12 form-group">
+                {{ form.address.label_tag }}
+                {{ form.address|add_class:"form-control" }}
+            </div>
+            <div class="mb-3 col-md-12  form-group">
+                {{ form.city.label_tag }}
+                {{ form.city|add_class:"form-control" }}
+            </div>
+            <div class="mb-3 col-md-12 form-group">
+                {{ form.country.label_tag }}
+                {{ form.country|add_class:"form-control" }}
+            </div>
+        <h3 class="event-details-title">Event Details</h3><br>
+            <div class="mb-3 col-md-12 form-group">
+                {{ form.name.label_tag }}
+                {{ form.name|add_class:"form-control" }}
+            </div>
+            <div class="mb-3 col-md-12  form-group">
+                {{ form.type.label_tag }}
+                {{ form.type|add_class:"form-control" }}
+            </div>
+            <div class="mb-3 col-md-12form-group">
+                {{ form.booking_startdate.label_tag }}
+                {{ form.booking_startdate|add_class:"form-control" }}
+            </div>
+            <div class="mb-3  form-group">
+                {{ form.booking_enddate.label_tag }}
+                {{ form.booking_enddate|add_class:"form-control" }}
+            </div>
+            <div class="mb-3  form-group">
+                {{ form.booking_starttime.label_tag }}
+                {{ form.booking_starttime|add_class:"form-control" }}
+            </div>
+            <div class="mb-3  form-group">
+                {{ form.booking_endtime.label_tag }}
+                {{ form.booking_endtime|add_class:"form-control" }}
+            </div>
+            <div class="mb-3 col-md-12 form-group"> 
+                {{ form.description.label_tag }}
+                {{ form.description|add_class:"form-control" }}
+            </div>
+
+            <!-- Ticketing Section -->
+            <h3 class="ticketing-details-title">Ticketing Details</h3><br>
+            <div class="mb-3  form-group">
+                {{ form.ticket_type.label_tag }}
+                {{ form.ticket_type|add_class:"form-control" }}
+            </div>
+            <div class="mb-3  form-group">
+                {{ form.ticket_quantity.label_tag }}
+                {{ form.ticket_quantity|add_class:"form-control" }}
+            </div>
+        
+            <div class="mb-3 form-group">
+            {{ form.ticket_price.label_tag }}
+            {{ form.ticket_price|add_class:"form-control" }}
+            </div>
+            <div class="mb-3  form-group">
+            {{ form.total_price.label_tag }}
+            {{ form.total_price|add_class:"form-control" }}
+             </div>
+            <div class="mb-3  form-group">
+                {{ form.promo_code.label_tag }}
+                {{ form.promo_code|add_class:"form-control" }}
+            </div>
+        
+            
+            <div class="mb-3  form-group">
+            {{ form.payment_method.label_tag }}
+            {{ form.payment_method|add_class:"form-control" }}
+            </div>
+             <div class="mb-3  form-group">
+            {{ form.payment_status.label_tag }}
+            {{ form.payment_status|add_class:"form-control" }}
+             </div>
+        </div>
+        <br>
+        <div class="text-center">
+            <button class="btn btn-primary px-5" type="submit">submit</button>
+        </div>
+    </form>
+</div>    
+<!--{{form.as_p}}
+<button class="btn text-center" type="button" style="background-color:#89bcec;">Book Now</button>
+
+</form>
+</div>-->
+<script src="{% static 'script.js/main.js' %}"></script>
+<script>
+    document.getElementById("home-button").addEventListener("click", function() {
+        window.location.href = '/index/';
+    document.addEventListener('DOMContentLoaded', function () {
+    const quantity = document.getElementById('id_ticket_quantity');
+    const price = document.getElementById('id_ticket_price');
+    const total = document.getElementById('id_total_price');
+
+    function updateTotal() {
+        const qty = parseInt(quantity.value) || 0;
+        const prc = parseFloat(price.value) || 0;
+        total.value = (qty * prc).toFixed(2);
+    }
+
+    if (quantity && price && total) {
+        quantity.addEventListener('input', updateTotal);
+        price.addEventListener('input', updateTotal);
+    }
+});    
+    });
+    document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    let data = {};
+    formData.forEach((value, key) => data[key] = value);
+
+    fetch('/api/bookings/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken'),  // make sure to send csrf token
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Booking failed');
+        return response.json();
+    })
+    .then(data => {
+        alert('Booking successful! Confirmation email sent.');
+        window.location.reload();  // or redirect
+    })
+    .catch(error => alert(error));
+});
+
+// CSRF helper function to get csrftoken from cookie
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let cookie of cookies) {
+            cookie = cookie.trim();
+            if (cookie.startsWith(name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+</script>
+{% endblock %}
