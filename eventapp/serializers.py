@@ -10,7 +10,6 @@ from .models import ContactMessage
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
-<<<<<<< HEAD
         fields = '__all__'
 
 class BookingSerializer(serializers.ModelSerializer):

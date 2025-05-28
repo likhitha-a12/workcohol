@@ -102,4 +102,3 @@ def contact_api(request):
 
             return Response({'message': 'Message sent successfully!'}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
->>>>>>> 242627f525c96f0cf33a0494332c6fb0b9a1d423
